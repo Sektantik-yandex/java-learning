@@ -33,4 +33,22 @@ private HashMap<String, User> userHashMaps; //Создаем хеш таблиц
         System.out.println("Новый сотрудник " + user.getName() + " зарегистрирован");
     }
 
+    //Метод отображение задач сотрудника
+
+    public void searchTaskUser(String name) {
+        boolean found = false;
+
+        for (Task task : taskHashMaps.values()) {
+            if (name.equals(task.getUser().getName())) {
+                System.out.println("Задачи сотрудника " + task.getUser().getName() + ":");
+                System.out.println(task); // здесь можно вывести информацию о задаче
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Такого сотрудника нет");
+        }
+    }
+
 }
